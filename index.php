@@ -1,16 +1,16 @@
 <!DOCTYPE html>
 
 <?php
-	session_start();
-	if($_SESSION['usuario']==$_POST['usuario'])
-	if('1'=='2')	
-	{
+	// session_start();
+	// // if($_SESSION['usuario']==$_POST['usuario'])
+	// if('1'=='2')	
+	// {
 
-	}
-	else
-	{
-		header("location: login.html");
-	}
+	// }
+	// else
+	// {
+	// 	header("location: login.html");
+	// }
 ?>
 
 
@@ -31,34 +31,17 @@
 
 	</head>
 	<body>
-		<div class="CajaArriva animated bounceInUp">
-			
-		</div>
-		<div class="CajaInicio animated bounceInRight">
-			<h1>Trabajos Pr&aacute;cticos: </br> Sala de Juegos</h1>
-			<form id="FormIngreso" style="min-height: 380px;">
-				<img src="tps.png" style=" width: 546px; float: right;">
-					
-	
-				<a  class="MiBotonUTNMenu" title="Adivina el n&uacute;mero v1.0" onclick="location.href='AdivinaElNumero1.html'" >AdivinaElNumero 1</a>
-				<a  class="MiBotonUTNMenu" title="Adivina el n&uacute;mero v2.0" onclick="location.href='AdivinaElNumero2.html'" >AdivinaElNumero 2</a>
-				<a  class="MiBotonUTNMenu" title="Piedra, papel o tijera v1.0"  onclick="location.href='PiedarPapelTijera1.html'" >Piedar Papel Tijera 1</a>
-				<a  class="MiBotonUTNMenu" title="Piedra, papel o tijera v2.0" onclick="location.href='PiedarPapelTijera2.html'" >Piedar Papel Tijera 2</a>
-				<a  class="MiBotonUTNMenu" title="Agilidad aritm&eacute;tica v1.0"onclick="location.href='AgilidadAritmetica1.html'" >AgilidadAritmetica 1</a>
-				<a  class="MiBotonUTNMenu" title="Agilidad aritm&eacute;tica v2.0"onclick="location.href='AgilidadAritmetica2.html'" >AgilidadAritmetica 2</a>
-				<a  class="MiBotonUTNMenu" title="Reflejos dalt&oacute;nicos v1.0"onclick="location.href='ReflejosDaltonicos1.html'" >ReflejosDaltonicos 1</a>
-				
-				
-				
 
-			</form>
-			
+		<form id="FormIngreso" method="post" action="indiceJuego.php">
+<!-- 			<input type="text" name="apellido" id="apellido" placeholder="ingrese apellido" value="<?php echo isset($unaPersona) ?  $unaPersona->GetApellido() : "" ; ?>" /><span id="lblApellido" style="display:none;color:#FF0000;width:1%;float:right;font-size:80">*</span>
+			<input type="text" name="nombre" id="nombre" placeholder="ingrese nombre" value="<?php echo isset($unaPersona) ?  $unaPersona->GetNombre() : "" ; ?>" /> <span id="lblNombre" style="display:none;color:#FF0000;width:1%;float:right;font-size:80">*</span>
+			<input type="hidden" name="idOculto" id="id" value="<?php echo isset($unaPersona) ? $unaPersona->GetId() : "" ; ?>" /> -->
+			<!-- <input type="hidden" value="<?php echo $_POST['idParaModificar']; ?>" id="idParaModificar" name="agregar" />
+			<input type="hidden" value="" id="hdnAgregar" name="agregar" /> -->
+			<input type="button" value="ingresar" id="ingresar" onclick="indiceJuego.php">
+			</div>
+		</form>
 
-		</div>
 
-		<center>
-			
-		</center>
-		
 	</body>
 </html>
