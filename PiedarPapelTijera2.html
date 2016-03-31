@@ -10,18 +10,30 @@
 		<!--final de Estilos-->
 
 		<!--Lógica-Programación-->
-		<script type="text/javascript" src="jsPiedarPapelTijera2.js"></script>
+		<!--<script type="text/javascript" src="jsPiedarPapelTijera2.js"></script> -->
+		<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+		<script src="app.js"></script>
         <!--Final de Lógica-Programación -->
 		
 
 		</head>
-	<body onload="comenzar()">
+	<body ng-app="" ng-init="ganadas='gano';perdidas=0">
 		<div class="CajaUno animated bounceInDown">
 			
 
-			<input type="text" readonly id="ganadas">
-			<input type="text" readonly id="perdidas">
-			<input type="text" readonly id="empatadas">
+			<input type="text" readonly ng-model="ganadas">
+			<input type="text" readonly ng-model="perdidas">
+			<input type="text" readonly ng-model="empatadas">
+
+
+			<!-- Cosas de Angular!! -->
+
+			<input type="text" ng-model="mitest">
+			<p ng-bind="mitest"> </p>	
+			{{mitest}}			
+
+			<!-- Fin de cosas de angular -->
+
 			<form id="FormIngreso">
 				<center>
 					<img src="imagenes/interrogacion.jpg" >
@@ -35,9 +47,9 @@
 
 			
 			
-			<img class="PiedraPapelTijera animated zoomInRight " src="imagenes/piedra.jpg" onclick="piedra()">
-			<img class="PiedraPapelTijera animated zoomInUp" src="imagenes/papel.jpg" onclick="papel()">
-			<img class="PiedraPapelTijera animated zoomInLeft"  src="imagenes/tijera.jpg" onclick="tijera()">
+			<img class="PiedraPapelTijera animated zoomInRight " src="imagenes/piedra.jpg" ng-click="piedra()">
+			<img class="PiedraPapelTijera animated zoomInUp" src="imagenes/papel.jpg" ng-click="papel()">
+			<img class="PiedraPapelTijera animated zoomInLeft"  src="imagenes/tijera.jpg" ng-click="perdidas=perdidas+1">
 			
 
 			
