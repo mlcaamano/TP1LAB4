@@ -49,6 +49,58 @@ $scope.papel=function(){
 		$scope.perdidas++;
 	}
  }
+
+$scope.tijera=function(){
+
+	// alert("hola");
+	$scope.comenzar();
+	alert("la maquina selecciono: "+$scope.eleccionMaquina);
+	$scope.eleccionHumano="tijera";
+	if($scope.eleccionHumano==$scope.eleccionMaquina)
+	{
+		alert("empate.");
+		$scope.empatadas++;
+
+	}
+	else if($scope.eleccionMaquina=="papel")
+	{
+		alert("vos ganastes.");
+		$scope.ganadas++;
+	}
+	else
+	{
+		alert("ganó la Maquina.");
+		$scope.perdidas++;
+	}
+ }
+
+$scope.piedra=function(){
+
+	// alert("hola");
+	$scope.comenzar();
+	alert("la maquina selecciono: "+$scope.eleccionMaquina);
+	$scope.eleccionHumano="piedra";
+	if($scope.eleccionHumano==$scope.eleccionMaquina)
+	{
+		alert("empate.");
+		$scope.empatadas++;
+
+	}
+	else if($scope.eleccionMaquina=="tijera")
+	{
+		alert("vos ganastes.");
+		$scope.ganadas++;
+	}
+	else
+	{
+		alert("ganó la Maquina.");
+		$scope.perdidas++;
+	}
+ }
+
+
+
+
 // $scope.papel();
 
 
