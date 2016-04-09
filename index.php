@@ -16,9 +16,14 @@
 
 	</head>
 	<body>
-		<div class="CajaArriva animated bounceInUp">
-			
+		<div class="CajaArriva animated bounceInUp">	
 		</div>
+
+		<div class="CajaInicio animated bounceInRight">
+			<a class="MiBotonUTNMenu" href="grillaUsuario.php"> Usuarios -> Carga, baja y modificacion </a> </li>
+		</div>	
+
+
 		<div class="CajaInicio animated bounceInRight">
 			<h1>Trabajos Pr&aacute;cticos: </br> Sala de Juegos</h1>
 			<form id="FormIngreso" style="min-height: 380px;">
