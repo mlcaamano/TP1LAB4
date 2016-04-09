@@ -50,11 +50,26 @@ class Persona
 	public static function BorrarUnUsuario($id)
 	{
 		$objetoAccesoDato=AccesoDatos::dameUnObjetoAcceso();
-		$consulta=$objetoAccesoDato->RetornarConsulta("DELETE from personas WHERE Id='$id'");
+		$consulta=$objetoAccesoDato->RetornarConsulta("DELETE FROM personas WHERE Id='$id'");
 		//$consulta->bindValue(':legajo',$legajo, PDO::PARAM_STR);
 		$consulta->execute();
 		return $consulta->rowCount();
 	}
+
+		public function InsetarUnUsuario()
+	{
+		$objetoAccesoDato=AccesoDatos::dameUnObjetoAcceso();
+		$consulta=$objetoAccesoDato->RetornarConsulta("INSERT into personas (Usuario, Clave) VALUES ('$this->_usuario', '$this->_clave')");
+		$consulta->execute();
+	}
+
+		public function ModificarUnUsuario()
+	{
+		$objetoAccesoDato=AccesoDatos::dameUnObjetoAcceso();
+		$consulta=$objetoAccesoDato->RetornarConsulta("UPDATE personas SET Usuario='$this->_usuario', Clave='$this->_clave' WHERE Id='$this->_id'");
+		$consulta->execute();
+	}
+
 
 
 }
