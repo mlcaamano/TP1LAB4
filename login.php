@@ -31,7 +31,7 @@ if(isset($_POST['usuario']))
 
 	$UsuarioObtenido= Persona::TraerUnUsuario($_POST['usuario']);
 
-	if($UsuarioObtenido->usuario==$_POST['legajo'] && $UsuarioObtenido->clave== $_POST['clave'])
+	if($UsuarioObtenido->_usuario==$_POST['usuario'] && $UsuarioObtenido->_clave== $_POST['clave'])
 	{
 		// session_start();
 		// $_SESSION['usuario'] = $UsuarioObtenido->usuario;
