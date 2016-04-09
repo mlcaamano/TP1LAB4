@@ -47,6 +47,16 @@ class Persona
 		return $UsuarioBuscado;				
 	}
 
+	public static function TraerUnUsuarioPorId($id) 
+	{	
+		$objetoAccesoDato= AccesoDatos::dameUnObjetoAcceso();
+		$consulta=$objetoAccesoDato->RetornarConsulta("SELECT Id as _id, Usuario as _usuario, Clave as _clave FROM personas WHERE Id='$id'");
+		//$consulta->bindValue(':usario', $usuario, PDO::PARAM_STR);
+		$consulta->execute();
+		$UsuarioBuscado=$consulta->fetchObject('Persona');
+		return $UsuarioBuscado;				
+	}
+
 	public static function BorrarUnUsuario($id)
 	{
 		$objetoAccesoDato=AccesoDatos::dameUnObjetoAcceso();
