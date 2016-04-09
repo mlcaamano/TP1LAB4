@@ -10,6 +10,9 @@ class Persona
   	private $dni;
   	private $foto;
 
+  	private $usuario;
+  	private $clave;
+
 //--------------------------------------------------------------------------------//
 
 //--------------------------------------------------------------------------------//
@@ -57,7 +60,7 @@ class Persona
 	}
 //--------------------------------------------------------------------------------//
 //--CONSTRUCTOR
-	public function __construct($dni=NULL)
+/*	public function __construct($dni=NULL)
 	{
 		if($dni != NULL){
 			$obj = Persona::TraerUnaPersona($dni);
@@ -66,6 +69,16 @@ class Persona
 			$this->nombre = $obj->nombre;
 			$this->dni = $dni;
 			$this->foto = $obj->foto;
+		}
+	}*/
+
+	public function __construct($dni=NULL)
+	{
+		if($usuario != NULL){
+			$obj = Persona::TraerUnaPersona($dni);
+			
+			$this->usuario = $obj->Usuario;
+			$this->clave = $obj->Clave;
 		}
 	}
 
@@ -93,6 +106,19 @@ class Persona
 					
 	}
 	
+	public static function TraerUnUsuario($_usuario) 
+	{	
+
+
+		$objetoAccesoDato = AccesoDatos::dameUnObjetoAcceso(); 
+		$consulta =$objetoAccesoDato->RetornarConsulta("CALL TraerUnaPersona(:id)");
+		$consulta->bindValue(':id', $_usuario, PDO::PARAM_INT);
+		$consulta->execute();
+		$personaBuscada= $consulta->fetchObject('persona');
+		return $personaBuscada;	
+					
+	}
+
 	public static function TraerTodasLasPersonas()
 	{
 		$objetoAccesoDato = AccesoDatos::dameUnObjetoAcceso(); 
