@@ -8,14 +8,16 @@
 		<link rel="stylesheet" type="text/css" href="estilo.css">
 		<link rel="stylesheet" type="text/css" href="animacion.css">
 		<!--final de Estilos-->
-
+		<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+		<script src="app.js"></script>
+		<script src="controladorRD.js"></script>
 		<!--Lógica-Programación-->
-		<script type="text/javascript" src="jsReflejosDaltonicos1.js"></script>
+
         <!--Final de Lógica-Programación -->
 		
 
 		</head>
-	<body onload="comenzar()">
+	<body ng-app="MiApp" ng-controller="ContRD" ng-init="comenzar()">
 		<div class="CajaUno animated bounceInDown">
 			
 
@@ -25,14 +27,12 @@
 				
 				
 			</form>
-			<button   style="background:blue;"  class="MiBotonUTNJuego animated tada swing wobble" onclick="Responder('azul')" >azul</button>
-			<button   style="background:yellow;" class="MiBotonUTNJuego animated shake  swing " onclick="Responder('amarillo')" >amarillo</button>
-			<button  style="background:brown;" class="MiBotonUTNJuego animated swing shake" onclick="Responder('marron')" >marrón</button>
-			
-			<button  style="background:green;" class="MiBotonUTNJuego animated swing shake" onclick="Responder('verde')" >verde</button>
-			<button  style="background:skyblue;" class="MiBotonUTNJuego animated tada swing" onclick="Responder('celeste')" >celeste</button>
-		
-			<button  style="background:red;" class="MiBotonUTNJuego animated swing shake" onclick="Responder('rojo')" >rojo</button>
+			<button   style="background:blue;"  class="MiBotonUTNJuego animated tada swing wobble" ng-click="responder('Azul')" >azul</button>
+			<button   style="background:yellow;" class="MiBotonUTNJuego animated shake  swing " ng-click="responder('Amarillo')" >amarillo</button>
+			<button  style="background:brown;" class="MiBotonUTNJuego animated swing shake" ng-click="responder('Marron')" >marrón</button>
+			<button  style="background:green;" class="MiBotonUTNJuego animated swing shake" ng-click="responder('Verde')" >verde</button>
+			<button  style="background:skyblue;" class="MiBotonUTNJuego animated tada swing" ng-click="responder('Celeste')" >celeste</button>
+			<button  style="background:red;" class="MiBotonUTNJuego animated swing shake" ng-click="responder('Rojo')" >rojo</button>
 			<button  style="background:Pink;" class="MiBotonUTNJuego animated hinge"  >Rosa</button>
 		</div>
 		<div class="CajaUno animated bounceInLeft">
