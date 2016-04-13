@@ -1,6 +1,7 @@
 angapp.controller('ContRD', function($scope){
 
-var temp=0;
+
+//var temp=0;
 var tiempo=new Date();
 
 $scope.comenzar=function(){
@@ -31,7 +32,7 @@ $scope.comenzar=function(){
 
 	alert("La maquina eligio:"+$scope.colorMaquina)
 	
-	
+	msg1=tiempo.getTime()
 }
 
 
@@ -42,7 +43,8 @@ $scope.responder=function($eleccion){
 	if($scope.eleccionHumano==$scope.colorMaquina)
 	{
 		alert("Usted a acertado");
-		alert(msg=tiempo.getTime());
+		msg2=Math.round(tiempo.getTime()/1000);
+		alert(msg2);
 	}
 	else
 	{
