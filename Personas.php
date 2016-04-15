@@ -73,6 +73,16 @@ class Persona
 		$consulta->execute();
 	}
 
+	public static function InsetarUnUsuarioStatic($persona)
+	{
+		$objetoAccesoDato=AccesoDatos::dameUnObjetoAcceso();
+		$consulta=$objetoAccesoDato->RetornarConsulta("INSERT into personas (Usuario, Clave) VALUES ('$persona->_usuario', '$persona->_clave')");
+		$consulta->execute();
+		return $objetoAccesoDato->RetornarUltimoIdInsertado();
+	
+				
+	}	
+
 		public function ModificarUnUsuario()
 	{
 		$objetoAccesoDato=AccesoDatos::dameUnObjetoAcceso();

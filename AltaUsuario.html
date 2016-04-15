@@ -1,0 +1,53 @@
+<html>
+
+<head>
+	<head>
+	<meta charset="utf-8">
+	<title>Sala De Juegos</title>
+
+	<!--Estilos-->
+		<link rel="stylesheet" type="text/css" href="estilo.css">
+		<link rel="stylesheet" type="text/css" href="animacion.css">
+	<!--final de Estilos-->
+		<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+		<script src="app.js"></script>
+		<script src="controladorAlta.js"></script>
+	<!--Lógica-Programación-->
+    <!--Final de Lógica-Programación -->
+</head>
+
+
+
+<body style="margin: 0 12%;" ng-app="MiApp" ng-controller="contAlta">
+<div class="container">
+
+
+<div class="stripes"><span></span></div>
+	<div class="main"><div class="inner_copy"></div>
+		<div class="left">
+			<div class="content">
+
+				<h1>Nuevo usuario</h1>
+
+				<form name="frmAlta" method="post">
+				<h2>Datos personales: </h2>
+				</br>																					
+				<input hidden type="text" name="id" id="id" placeholder="Ingrese numero de id" value="" ng-model="id"/>
+				</br>
+				<input type="text" name="idUsuario" id="idUsuario" placeholder="Ingrese Usuario" value="" ng-model="usuario"/>
+				</br>
+				<input type="text" name="idClave" id="idClave" placeholder="Ingrese Nombre" value="" ng-model="clave"/>
+				</br>
+				<input type="submit" name="guardar" id="guardar" ng-click="guardar()"/>
+				</form>
+			</div>
+		</div>
+		<div class="clearer"></div>
+	</div>
+</div>
+
+
+</div>
+</body>
+
+</html>
