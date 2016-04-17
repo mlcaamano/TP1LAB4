@@ -13,7 +13,8 @@ angapp.controller('contBorrarModificar', function($scope, $http) {
         console.log( response);
     }
 
-  $http.get('PHP/nexo.php', { params: {accion :"traer"}})
+  
+  $http.get('nexo.php', { params: {accion :"traer"}})
   .then(bien, mal);
 
  	
@@ -21,10 +22,10 @@ $scope.Borrar=function(persona){
 
 	console.log("borrar"+persona);
 
-    $http.post("PHP/nexo.php",{datos:{accion :"borrar",persona:persona}},{headers: {'Content-Type': 'application/x-www-form-urlencoded'}})
+    $http.post("nexo.php",{datos:{accion :"borrar",persona:persona}},{headers: {'Content-Type': 'application/x-www-form-urlencoded'}})
     .then(function(respuesta) {       
         console.log(respuesta.data);
-        $http.get('PHP/nexo.php', { params: {accion :"traer"}})
+        $http.get('nexo.php', { params: {accion :"traer"}})
         .then(function(respuesta) {       
             $scope.ListadoPersonas = respuesta.data.listado;
             console.log(respuesta.data);
@@ -39,11 +40,18 @@ $scope.Borrar=function(persona){
 }
 
 
-
-
- 	$scope.Modificar=function(id){
+ 	$scope.Modificar=function(persona){
  		
- 		console.log("Modificar"+id);
+ 		console.log("Modificar"+persona);
+
+        $http.post("nexo.php",{datos:{accion :"buscar",persona:persona}},{headers: {'Content-Type': 'application/x-www-form-urlencoded'}})
+        .then(function(respuesta) {       
+            $scope.personaBuscada=respuesta.data.listado;
+            console.log(respuesta);
+            window.location.assign("AltaUsuario.html");
+        },function errorCallback(response) {        
+            console.log( response);           
+        });
  	}
 
 

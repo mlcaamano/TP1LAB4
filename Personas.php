@@ -83,7 +83,7 @@ class Persona
 				
 	}	
 
-		public function ModificarUnUsuario()
+		public static function ModificarUnUsuario()
 	{
 		$objetoAccesoDato=AccesoDatos::dameUnObjetoAcceso();
 		$consulta=$objetoAccesoDato->RetornarConsulta("UPDATE personas SET Usuario='$this->_usuario', Clave='$this->_clave' WHERE Id='$this->_id'");

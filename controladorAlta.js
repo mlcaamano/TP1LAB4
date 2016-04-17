@@ -19,12 +19,10 @@ angapp.controller('contAlta', function($scope, $http) {
   	console.log("persona a guardar:");
     console.log($scope.persona);
     $http.post('nexo.php', { datos: {accion :"insertar",persona:$scope.persona}})
- 	  .then(function(respuesta) {     	
- 		     //aca se ejetuca si retorno sin errores      	
+ 	  .then(function(respuesta) {     	     	
       	 console.log(respuesta.data);
 
     },function errorCallback(response) {     		
-     		//aca se ejecuta cuando hay errores
      		console.log( response);     			
  	  });
 
